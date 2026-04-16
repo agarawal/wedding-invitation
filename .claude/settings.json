@@ -8,7 +8,14 @@
       "Bash(curl -s http://localhost:3001 -o /dev/null -w \"%{http_code}\")",
       "Bash(git init *)",
       "Bash(git remote *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Read(//Users/Deepak.Agarawal/.ssh/**)",
+      "Bash(ssh-keygen -t ed25519 -C \"agarawal-github\" -f ~/.ssh/id_ed25519_agarawal -N \"\")",
+      "Bash(cat)",
+      "Bash(ssh -T github-agarawal)"
     ]
   }
 }
