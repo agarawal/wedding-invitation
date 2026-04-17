@@ -58,7 +58,7 @@ export default function Home() {
           <p className="font-sans text-[9px] tracking-[0.35em] text-sage-dark/60 uppercase mb-2">
             Celebrations
           </p>
-          <h2 className="font-script text-sage-dark text-5xl">Sacred Ceremonies</h2>
+          <h2 className="font-script text-sage-dark" style={{ fontSize: '2.6rem' }}>Sacred Ceremonies</h2>
         </motion.div>
 
         {config.events.map((day, i) => (

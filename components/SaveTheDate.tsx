@@ -72,10 +72,10 @@ function ScratchCard({ label, value }: ScratchCardProps) {
 
   return (
     <div className="flex flex-col items-center gap-2.5">
-      <span className="font-sans text-[9px] tracking-[0.3em] text-sage-dark/60 uppercase">
+      <span className="font-sans text-[9px] tracking-[0.3em] text-sage-dark/80 uppercase">
         {label}
       </span>
-      <div className="relative w-[110px] h-[100px] rounded-2xl bg-white overflow-hidden shadow-md border border-sage/10">
+      <div className="relative w-[110px] h-[110px] rounded-2xl bg-white overflow-hidden shadow-md border border-sage/15">
         {/* Value underneath */}
         <AnimatePresence>
           {revealed && (
@@ -100,7 +100,7 @@ function ScratchCard({ label, value }: ScratchCardProps) {
           <canvas
             ref={canvasRef}
             width={110}
-            height={100}
+            height={110}
             className="absolute inset-0 w-full h-full cursor-pointer touch-none"
             onMouseDown={() => { drawing.current = true; }}
             onMouseUp={() => { drawing.current = false; }}
@@ -137,55 +137,74 @@ export default function SaveTheDate() {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
       className="py-20 px-6 relative overflow-hidden"
-      style={{ background: 'linear-gradient(160deg, #F0EDE5 0%, #EBF2E7 100%)' }}
+      style={{ background: 'linear-gradient(160deg, #EBE5D8 0%, #E6EEE0 100%)' }}
     >
-      {/* Background monogram */}
-      <div
-        className="absolute -right-4 -top-4 font-script text-sage/8 select-none pointer-events-none"
-        style={{ fontSize: '18rem', lineHeight: 1 }}
-        aria-hidden
-      >
-        D
-      </div>
+      {/* Subtle floral corner accents */}
+      <div className="absolute top-6 left-6 text-gold/30 text-4xl font-serif select-none pointer-events-none">❧</div>
+      <div className="absolute top-6 right-6 text-gold/30 text-4xl font-serif select-none pointer-events-none" style={{ transform: 'scaleX(-1)' }}>❧</div>
+      <div className="absolute bottom-6 left-6 text-gold/20 text-3xl font-serif select-none pointer-events-none" style={{ transform: 'scaleY(-1)' }}>❧</div>
+      <div className="absolute bottom-6 right-6 text-gold/20 text-3xl font-serif select-none pointer-events-none" style={{ transform: 'scale(-1,-1)' }}>❧</div>
 
-      <div className="max-w-sm mx-auto space-y-10 relative">
+      <div className="max-w-sm mx-auto space-y-12 relative">
         {/* Header */}
-        <div className="text-center space-y-3">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center space-y-4"
+        >
           <div className="flex items-center gap-3 justify-center">
-            <div className="h-px w-10 bg-sage-dark/25" />
-            <span className="font-sans text-[9px] tracking-[0.4em] text-sage-dark/60 uppercase">
-              The Date
+            <div className="h-px w-10 bg-gold/40" />
+            <span className="font-sans text-[9px] tracking-[0.4em] text-gold-dark/70 uppercase">
+              Mark Your Calendar
             </span>
-            <div className="h-px w-10 bg-sage-dark/25" />
+            <div className="h-px w-10 bg-gold/40" />
           </div>
-          <h2 className="font-script text-sage-dark text-6xl">Save the Date</h2>
-          <p className="font-serif italic text-sage-dark/65 text-sm">
-            Scratch each tile to reveal our wedding date
+          <h2 className="font-script text-sage-deep" style={{ fontSize: '2.8rem' }}>Save the Date</h2>
+          <p className="font-serif italic text-sage-dark/75 text-sm leading-relaxed">
+            Scratch each tile to reveal<br />our special day
           </p>
-        </div>
+        </motion.div>
 
         {/* Scratch cards */}
-        <div className="flex gap-3 justify-center">
+        <div className="flex gap-5 justify-center">
           <ScratchCard label="Month" value="July" />
           <ScratchCard label="Day" value="5 & 6" />
           <ScratchCard label="Year" value="2026" />
         </div>
 
-        {/* Venue teaser */}
-        <div className="text-center space-y-4">
+        {/* Venue card */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="rounded-2xl px-6 py-6 text-center space-y-3 relative overflow-hidden"
+          style={{
+            background: 'rgba(255,255,255,0.6)',
+            border: '1px solid rgba(196,164,74,0.25)',
+            boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
+          }}
+        >
           <div className="flex items-center gap-3 justify-center">
-            <div className="h-px w-14 bg-sage-dark/20" />
-            <svg className="w-4 h-4 text-sage-dark/40" fill="currentColor" viewBox="0 0 24 24">
+            <div className="h-px flex-1 bg-gold/30" />
+            <svg className="w-4 h-4 text-gold-dark/60 shrink-0" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
             </svg>
-            <div className="h-px w-14 bg-sage-dark/20" />
+            <div className="h-px flex-1 bg-gold/30" />
           </div>
-          <p className="font-serif italic text-sage-dark/70 text-sm">
-            Alcor Hotel · Bistupur, Jamshedpur
-          </p>
-          <p className="font-sans text-[9px] tracking-[0.25em] text-sage/60 uppercase">
-            Jharkhand, India
-          </p>
+          <div>
+            <p className="font-serif text-sage-deep text-xl font-medium tracking-wide">Alcor Hotel</p>
+            <p className="font-serif italic text-sage-dark/70 text-sm mt-1">Bistupur, Jamshedpur, Jharkhand</p>
+          </div>
+          <p className="font-sans text-[9px] tracking-[0.3em] text-gold-dark/60 uppercase">July 5–6, 2026</p>
+        </motion.div>
+
+        {/* Bottom ornament */}
+        <div className="flex items-center gap-3 justify-center">
+          <div className="h-px flex-1 bg-gold/20" />
+          <span className="text-gold/50 text-sm">✦</span>
+          <div className="h-px flex-1 bg-gold/20" />
         </div>
       </div>
     </motion.section>

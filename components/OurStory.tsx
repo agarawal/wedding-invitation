@@ -27,7 +27,7 @@ function PhotoFrame({ src, caption, rotate }: { src: string; caption: string; ro
         />
       </div>
       <div className="flex items-center justify-center" style={{ height: '36px' }}>
-        <span className="font-script text-sage-dark text-xl">{caption}</span>
+        <span className="font-script text-sage-dark text-base font-light">{caption}</span>
       </div>
     </div>
   );
@@ -73,7 +73,7 @@ export default function OurStory() {
           <p className="font-sans text-[9px] tracking-[0.35em] text-sage-dark/60 uppercase mb-1">
             Captured Moments
           </p>
-          <h2 className="font-script text-sage-dark text-5xl">Our Photos</h2>
+          <h2 className="font-script text-sage-dark" style={{ fontSize: '2.6rem' }}>Our Photos</h2>
         </div>
 
         {/* Photo counter */}

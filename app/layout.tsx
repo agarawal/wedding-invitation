@@ -20,6 +20,7 @@ const cormorant = Cormorant_Garamond({
   variable: '--font-cormorant',
 });
 
+
 export const metadata: Metadata = {
   title: 'Deepak & Salomi — Wedding Invitation',
   description: 'Join us as we celebrate our wedding on July 5–6, 2026 at Alcor, Jamshedpur.',

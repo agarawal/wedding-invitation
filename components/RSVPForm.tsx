@@ -64,7 +64,7 @@ export default function RSVPForm() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h2 className="font-script text-sage-dark text-5xl">We Can't Wait!</h2>
+          <h2 className="font-script text-sage-dark" style={{ fontSize: '2.4rem' }}>We Can't Wait!</h2>
           <p className="font-serif italic text-sage-dark/70 leading-relaxed">
             Thank you, {name}! Your RSVP has been received.
             <br />
@@ -91,7 +91,7 @@ export default function RSVPForm() {
           <p className="font-sans text-[9px] tracking-[0.35em] text-sage-dark/60 uppercase mb-2">
             Join the Celebration
           </p>
-          <h2 className="font-script text-sage-dark text-5xl">Rsvp</h2>
+          <h2 className="font-script text-sage-dark" style={{ fontSize: '2.4rem' }}>RSVP</h2>
           <p className="font-serif italic text-sage-dark/65 text-sm mt-2">
             Kindly respond by {config.rsvpDeadline}
           </p>

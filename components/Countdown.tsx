@@ -49,10 +49,9 @@ export default function Countdown() {
       <div className="max-w-sm mx-auto">
         <div className="bg-white rounded-3xl px-6 py-10 shadow-sm border border-sage/12 text-center space-y-6">
           <div>
-            <p className="font-serif italic text-sage-dark/70 text-sm leading-relaxed">
-              A lifetime of togetherness begins with one sacred step
-            </p>
-            <h2 className="font-script text-sage-dark text-5xl mt-2">Wedding</h2>
+            <p className="font-sans text-[9px] tracking-[0.38em] text-sage-dark/55 uppercase mb-2">Counting Down To</p>
+            <h2 className="font-script text-sage-dark text-5xl mt-2">The Big Day</h2>
+            <p className="font-serif italic text-sage-dark/55 text-sm mt-1">A lifetime begins with one sacred step</p>
           </div>
 
           <div className="flex justify-center gap-4">
